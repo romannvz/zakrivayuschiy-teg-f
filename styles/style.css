@@ -21,13 +21,19 @@
   margin: 102px auto;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font), Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-variation-settings: "wdth" var(--thin-font-weight);
   color: var(--accent-color);
   background-color: var(--main-color);
   background-image: var(--main-background);
   background-size: cover;
   background-attachment: fixed;
+}
+
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: var(--main-font), Arial, Helvetica, sans-serif;
+  }
 }
 
 .header {
@@ -361,18 +367,6 @@ main {
   fill: var(--heart-main-body-color);
 }
 
-.like-icon.is-liked .contour {
-  fill: var(--heart-main-body-color);
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--heart-main-body-color);
-}
-
-.like-icon.is-liked .core {
-  fill: var(--heart-main-body-color);
-}
-
 .like-icon.like-icon.is-liked .heart {
   transform-origin: center;
 }
@@ -392,9 +386,7 @@ main {
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  border: none;
   outline: none;
-  background-color: transparent;
   border: 2px solid var(--accent-color);
   background-color: var(--main-color);
   padding: 16.5px;
