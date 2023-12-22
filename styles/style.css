@@ -22,7 +22,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-variation-settings: "wdth" var(--thin-font-weight);
+  font-variation-settings: "wght" var(--thin-font-weight);
   color: var(--accent-color);
   background-color: var(--main-color);
   background-image: var(--main-background);
@@ -63,6 +63,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  outline: none;
+  text-decoration: none;
 }
 
 .header__text-desc {
@@ -73,7 +75,7 @@
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625em;
   padding: 25px 0;
   margin-left: 18px;
 }
@@ -85,6 +87,10 @@
 
 button {
   cursor: pointer;
+}
+
+button:focus {
+  outline: none;
 }
 
 .theme-menu__button {
@@ -102,7 +108,7 @@ button {
   position: absolute;
   inset-inline-start: -20px;
   inset-block-start: 0px;
-  animation: cursor-key 500ms infinite ease-in-out alternate-reverse;
+  animation: cursor-key 500ms infinite ease-in-out alternate;
 }
 
 .theme-menu__button:disabled {
@@ -124,6 +130,7 @@ button {
   height: 2px;
   inset-inline-start: 0px;
   inset-block-start: 15px;
+  opacity: 0.6;
 }
 
 .theme-menu__button:focus {
@@ -136,6 +143,10 @@ button {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 52px;
   width: clamp(375px, 16.2852rem + 30.5164vw, 700px);
   margin-bottom: 54px;
 }
@@ -160,7 +171,7 @@ main {
 .card-title-text {
   font-family: inherit;
   font-size: 18px;
-  font-variation-settings: "wdth" var(--bold-font-weight);
+  font-variation-settings: "wght" var(--bold-font-weight);
 }
 
 .card-image {
@@ -171,7 +182,7 @@ main {
 .card-image-title {
   position: absolute;
   text-transform: uppercase;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
   inset-inline-end: 25px;
   inset-block-start: 25px;
   mix-blend-mode: hard-light;
@@ -195,6 +206,7 @@ main {
 .card-image-file {
   display: block;
   object-fit: cover;
+  object-position: center;
   width: 100%;
   height: 100%;
   aspect-ratio: 1/1;
@@ -254,8 +266,8 @@ main {
   gap: 5px;
 }
 
-.card__like-button,
-.dialog-button {
+.card__like-button/*, .dialog-button  */
+{
   position: relative;
   font-family: var(--accent-font), Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -266,25 +278,28 @@ main {
   outline: none;
 }
 
-.card-desc-button:focus,
-.footer-button:focus,
-.dialog-button:focus {
+/* .card-desc-button:focus
+, .footer-button:focus,
+.dialog-button:focus 
+{
   outline: none;
-}
+} */
 
 .card__icon-button:focus-visible {
-  outline: 1px solid var(--accent-color);
+  outline: 2px solid var(--accent-color)
 }
 
-.card__like-button:focus-visible,
-.footer-button:focus-visible,
-.dialog-button:focus-visible {
+.all-button-effect:focus-visible
+/* ,.footer-button:focus-visible,
+.dialog-button:focus-visible  */
+{
   box-shadow: 2px 2px 0 var(--accent-color);
 }
 
-.card__like-button::before,
-.footer-button::before,
-.dialog-button::before {
+.all-button-effect::before
+/* ,.footer-button::before,
+.dialog-button::before  */
+{
   content: "";
   position: absolute;
   inset: 0;
@@ -297,9 +312,10 @@ main {
   height: 100%;
 }
 
-.card__like-button:hover::before,
-.footer-button:hover::before,
-.dialog-button:hover::before {
+.all-button-effect:hover::before
+/* ,.footer-button:hover::before,
+.dialog-button:hover::before  */
+{
   transform: scaleX(1);
 }
 
@@ -314,7 +330,7 @@ main {
   align-items: flex-end;
   margin: 0;
   padding: 0;
-  outline: none;
+  /* outline: none; */
   border: none;
   background-color: transparent;
 }
@@ -375,7 +391,7 @@ main {
   transform-origin: center;
 }
 
-.footer {
+.bottom-button {
   font-family: var(--accent-font), Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
@@ -389,7 +405,7 @@ main {
   outline: none;
   border: 2px solid var(--accent-color);
   background-color: var(--main-color);
-  padding: 16.5px;
+  padding: 15px 20px;
 }
 
 .button-floppy {
@@ -416,6 +432,11 @@ main {
   gap: 30px;
 }
 
+.dialog[open]::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+  /* backdrop-filter: blur(7px); */
+}
+
 .dialog-head {
   display: grid;
   grid-template-columns: 39px 1fr;
@@ -432,11 +453,6 @@ main {
   height: 39px;
 }
 
-.dialog[open]::backdrop {
-  background-color: rgb(0 0 0 / 0.3);
-  backdrop-filter: blur(7px);
-}
-
 @media (width <= 375px) {
   .header {
     width: 100vw;
@@ -446,8 +462,17 @@ main {
     width: 100vw;
   }
 
+  .card-image-title {
+    inset-inline-end: 11px;
+  }
+
   .footer-button {
-    width: 100vw;
+    width: 100%;
     flex-direction: column;
+  }
+
+  .button-floppy {
+    width: 28px;
+    height: 28px;
   }
 }

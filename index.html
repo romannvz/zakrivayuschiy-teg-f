@@ -22,8 +22,8 @@
   <body class="page">
     <header class="header">
       <div class="header__text">
-        <h1 class="header__text-title">&lt;/html&gt;</h1>
-        <p class="header__text-desc">закрывающий тег</p>
+        <a href="" class="header__text-title">&lt;/html&gt;</a>
+        <h1 class="header__text-desc">закрывающий тег</h1>
       </div>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
@@ -115,7 +115,7 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button">
+              <button type="button" class="card__like-button all-button-effect">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -183,7 +183,7 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button">
+              <button type="button" class="card__like-button all-button-effect">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -248,7 +248,7 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button">
+              <button type="button" class="card__like-button all-button-effect">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -315,7 +315,7 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button">
+              <button type="button" class="card__like-button all-button-effect">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -383,7 +383,7 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button">
+              <button type="button" class="card__like-button all-button-effect">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -448,7 +448,7 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button">
+              <button type="button" class="card__like-button all-button-effect">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -515,7 +515,7 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button">
+              <button type="button" class="card__like-button all-button-effect">
                 <span class="button__text">Like</span>
               </button>
             </div>
@@ -583,18 +583,17 @@
                   />
                 </svg>
               </button>
-              <button type="button" class="card__like-button">
+              <button type="button" class="card__like-button all-button-effect">
                 <span class="button__text">Like</span>
               </button>
             </div>
           </div>
         </li>
       </ul>
-    </main>
-    <footer class="footer">
-      <button
+      <div class="bottom-button">
+        <button
         type="button"
-        class="footer-button"
+        class="footer-button all-button-effect"
         onclick="window['dialog'].showModal()"
         aria-controls="dialog"
       >
@@ -603,7 +602,8 @@
         </svg>
         <span class="button__text">Сохранить на память</span>
       </button>
-    </footer>
+      </div>
+    </main>
     <dialog class="dialog" id="dialog">
       <div class="dialog-head">
         <svg
@@ -614,16 +614,17 @@
         >
           <use href="./svg/floppy.svg#floppy" class="dialog-floppy-svg"></use>
         </svg>
-        <span class="dialog-text">Вставьте дискету, чтобы продолжить</span>
+        <p class="dialog-text">Вставьте дискету, чтобы продолжить</p>
       </div>
-
-      <button
+      <form method="dialog">
+        <button
         type="submit"
-        class="dialog-button"
+        class="dialog-button card__like-button all-button-effect"
         onclick="window['dialog'].close()"
       >
         <span class="button__text">ок</span>
       </button>
+      </form>
     </dialog>
     <script src="./scripts/like.js"></script>
   </body>

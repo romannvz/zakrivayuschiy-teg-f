@@ -20,7 +20,7 @@
 
 /* smooth hover */
 .theme-menu__button:enabled:hover {
-  transition: opacity 300ms ease;
+  /* transition: opacity 300ms ease; */
 }
 
 /* smooth return bottom line to invisible */
@@ -32,18 +32,18 @@
 
 /* fallback */
 .theme-menu__button:focus {
-  transition: opacity 3000ms ease;
+  /* transition: opacity 3000ms ease; */
 }
 
 /* smooth return bottom line after focus */
 .theme-menu__button:focus-visible {
-  transition: opacity 3000ms ease;
+  /* transition: opacity 3000ms ease; */
 }
 
 /* smooth visible bottom line at hover */
 .theme-menu__button:focus-visible::after {
   transform: scaleX(1);
-  transition: transform 300ms ease;
+  /* transition: transform 300ms ease; */
 }
 
 @keyframes cursor-key {
@@ -52,17 +52,13 @@
   }
 }
 
-/* button shadow */
-.card__like-button:focus-visible,
-.footer-button:focus-visible,
-.dialog-button:focus-visible {
+/* button shadow */ 
+.all-button-effect:focus-visible{
   transition: box-shadow 300ms ease;
 }
 
 /* line in da button */
-.card__like-button::before,
-.footer-button::before,
-.dialog-button::before {
+.all-button-effect::before {
   transition: transform 500ms ease-in-out;
 }
 
