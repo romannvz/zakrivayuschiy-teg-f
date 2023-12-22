@@ -148,7 +148,7 @@ main {
   align-items: center;
   gap: 52px;
   width: clamp(375px, 16.2852rem + 30.5164vw, 700px);
-  margin-bottom: 54px;
+  /* margin-bottom: 54px; */
 }
 
 .cards {
@@ -397,8 +397,7 @@ main {
 
 .dialog {
   border: 2px solid var(--accent-color);
-  padding-inline: 40px;
-  padding-block: 30px;
+  padding: 30px;
   color: var(--accent-color);
   font-family: var(--accent-font), fantasy;
   font-size: 14px;
@@ -406,6 +405,7 @@ main {
   text-transform: uppercase;
   background-color: var(--main-color);
   width: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  outline: none;
 }
 
 .dialog[open] {
@@ -421,12 +421,17 @@ main {
 .dialog-head {
   display: grid;
   grid-template-columns: 39px 1fr;
+  align-items: center;
   gap: 20px;
 }
 
 .dialog-button {
+  position: relative;
   width: 100%;
+  border: 2px solid var(--accent-color);
+  padding: 10px 17px;
   text-transform: uppercase;
+  background-color: transparent;
 }
 
 .dialog-floppy {
@@ -455,5 +460,10 @@ main {
   .button-floppy {
     width: 28px;
     height: 28px;
+  }
+
+  .dialog {
+    padding-inline: 40px;
+    padding-block: 30px;
   }
 }
