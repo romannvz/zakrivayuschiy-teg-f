@@ -37,7 +37,7 @@
 }
 
 /* button shadow */
-.all-button-effect:focus-visible {
+.all-button-effect {
   transition: box-shadow 300ms ease;
 }
 
