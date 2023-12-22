@@ -21,7 +21,7 @@
   margin: 102px auto;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   font-variation-settings: "wght" var(--thin-font-weight);
   color: var(--accent-color);
   background-color: var(--main-color);
@@ -44,7 +44,7 @@
   width: clamp(375px, 16.2852rem + 30.5164vw, 700px);
   padding-top: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   margin-bottom: 102px;
-  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
+  font-family: var(--accent-font), fantasy;
   text-transform: uppercase;
   border: 2px solid var(--accent-color);
   background-color: var(--main-color);
@@ -182,14 +182,14 @@ main {
 .card-image-title {
   position: absolute;
   text-transform: uppercase;
-  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
+  font-family: var(--accent-font), fantasy;
   inset-inline-end: 25px;
   inset-block-start: 25px;
   mix-blend-mode: hard-light;
   opacity: 0.5;
   text-shadow: -1px 0 var(--main-color), 0 1px var(--main-color),
     1px 0 var(--main-color), 0 -1px var(--main-color);
-    z-index: 1;
+  z-index: 1;
 }
 
 @supports (
@@ -266,10 +266,9 @@ main {
   gap: 5px;
 }
 
-.card__like-button/*, .dialog-button  */
-{
+.card__like-button {
   position: relative;
-  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   width: 130px;
   border: 2px solid var(--accent-color);
@@ -278,28 +277,15 @@ main {
   outline: none;
 }
 
-/* .card-desc-button:focus
-, .footer-button:focus,
-.dialog-button:focus 
-{
-  outline: none;
-} */
-
 .card__icon-button:focus-visible {
-  outline: 2px solid var(--accent-color)
+  outline: 2px solid var(--accent-color);
 }
 
-.all-button-effect:focus-visible
-/* ,.footer-button:focus-visible,
-.dialog-button:focus-visible  */
-{
+.all-button-effect:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
 }
 
-.all-button-effect::before
-/* ,.footer-button::before,
-.dialog-button::before  */
-{
+.all-button-effect::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -312,10 +298,7 @@ main {
   height: 100%;
 }
 
-.all-button-effect:hover::before
-/* ,.footer-button:hover::before,
-.dialog-button:hover::before  */
-{
+.all-button-effect:hover::before {
   transform: scaleX(1);
 }
 
@@ -330,7 +313,6 @@ main {
   align-items: flex-end;
   margin: 0;
   padding: 0;
-  /* outline: none; */
   border: none;
   background-color: transparent;
 }
@@ -392,7 +374,7 @@ main {
 }
 
 .bottom-button {
-  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
 }
 
@@ -418,7 +400,7 @@ main {
   padding-inline: 40px;
   padding-block: 30px;
   color: var(--accent-color);
-  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: 14px;
   line-height: 1.5;
   text-transform: uppercase;
@@ -434,7 +416,6 @@ main {
 
 .dialog[open]::backdrop {
   background-color: rgb(0 0 0 / 0.75);
-  /* backdrop-filter: blur(7px); */
 }
 
 .dialog-head {
